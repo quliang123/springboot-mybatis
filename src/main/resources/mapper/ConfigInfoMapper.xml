@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.ql.mapper.ConfigInfoMapper"    >
+
+
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+    <select id="list" resultType="java.util.HashMap">
+        SELECT
+        *
+        FROM
+        config_info
+    </select>
+    <select id="sourceIpStatistics" resultType="java.util.Map">
+        SELECT COUNT(src_ip) scrIpCount,src_ip FROM `config_info`
+        GROUP BY src_ip
+    </select>
+    <select id="configList" resultType="com.ql.model.ConfigInfo">
+        select * from config_info
+    </select>
+
+
+</mapper>
