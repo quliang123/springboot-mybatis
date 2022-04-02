@@ -22,4 +22,6 @@ public interface IConfigInfoService {
     List<Map> sourceIpStatistics();
 
     IPage configList(Page page);
+
+    List<Map> configList2();
 }

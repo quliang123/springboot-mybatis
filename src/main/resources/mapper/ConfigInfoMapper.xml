@@ -17,7 +17,7 @@
         SELECT COUNT(src_ip) scrIpCount,src_ip FROM `config_info`
         GROUP BY src_ip
     </select>
-    <select id="configList" resultType="com.ql.model.ConfigInfo">
+    <select id="configList" resultType="java.util.Map">
         select * from config_info
     </select>
 

@@ -1,5 +1,6 @@
 package com.ql.ctrl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ql.service.IConfigInfoService;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -50,5 +55,15 @@ public class ConfigInfoController {
     @GetMapping("/test")
     public ResponseEntity test(){
         return ResponseEntity.status(HttpStatus.OK).body("test");
+    }
+
+    @GetMapping("/test1")
+    public ResponseEntity test2(Page page){
+        Map retMap = new HashMap();
+        IPage iPage = configInfoService.configList(page);
+        List<Map> list2 = configInfoService.configList2();
+        retMap.put("ipage", iPage);
+        retMap.put("list", list2);
+        return ResponseEntity.ok(retMap);
     }
 }

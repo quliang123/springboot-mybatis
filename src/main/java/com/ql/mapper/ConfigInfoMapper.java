@@ -23,5 +23,7 @@ public interface ConfigInfoMapper {
 
     List<Map> sourceIpStatistics();
 
-    IPage<ConfigInfo> configList(Page page);
+    IPage<Map> configList(Page page);
+
+    List<Map> configList();
 }

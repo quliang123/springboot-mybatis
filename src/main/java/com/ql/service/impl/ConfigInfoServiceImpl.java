@@ -40,4 +40,10 @@ public class ConfigInfoServiceImpl  implements IConfigInfoService {
     public IPage configList(Page page) {
         return configInfoMapper.configList(page);
     }
+
+    @Override
+    public List<Map> configList2() {
+        return configInfoMapper.configList();
+    }
+
 }
