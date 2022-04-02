@@ -19,6 +19,11 @@
     </select>
     <select id="configList" resultType="java.util.Map">
         select * from config_info
+        <where>
+            <if test="id!=null">
+                and id=#{id}
+            </if>
+        </where>
     </select>
 
 

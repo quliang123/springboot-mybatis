@@ -18,6 +18,7 @@ public class ConfigInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private Long id;
     /**
      * data_id
      */

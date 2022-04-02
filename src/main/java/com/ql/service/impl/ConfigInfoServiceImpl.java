@@ -42,8 +42,12 @@ public class ConfigInfoServiceImpl  implements IConfigInfoService {
     }
 
     @Override
-    public List<Map> configList2() {
+    public List<Map> configList() {
         return configInfoMapper.configList();
     }
 
+    @Override
+    public Map configList(Long id) {
+        return configInfoMapper.configList(id);
+    }
 }

@@ -23,5 +23,7 @@ public interface IConfigInfoService {
 
     IPage configList(Page page);
 
-    List<Map> configList2();
+    List<Map> configList();
+
+    Map configList(Long id);
 }

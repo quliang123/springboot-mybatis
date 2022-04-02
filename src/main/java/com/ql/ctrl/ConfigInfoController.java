@@ -6,10 +6,7 @@ import com.ql.service.IConfigInfoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -61,9 +58,14 @@ public class ConfigInfoController {
     public ResponseEntity test2(Page page){
         Map retMap = new HashMap();
         IPage iPage = configInfoService.configList(page);
-        List<Map> list2 = configInfoService.configList2();
+        List<Map> list2 = configInfoService.configList();
         retMap.put("ipage", iPage);
         retMap.put("list", list2);
         return ResponseEntity.ok(retMap);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity dateil(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(configInfoService.configList(id));
     }
 }

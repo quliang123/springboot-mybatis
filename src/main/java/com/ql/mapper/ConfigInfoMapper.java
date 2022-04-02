@@ -26,4 +26,6 @@ public interface ConfigInfoMapper {
     IPage<Map> configList(Page page);
 
     List<Map> configList();
+
+    Map configList(Long id);
 }
